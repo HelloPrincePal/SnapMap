@@ -15,10 +15,6 @@ To track community engagement, we utilize real-time visual counters directly in 
 | **Total Documentation & Repo Views** | ![Repo Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FHelloPrincePal%2FSnapMap&count_bg=%23D4AF37&title_bg=%23181A1F&icon=github.svg&icon_color=%23E7E7E7&title=Repo+Views&edge_flat=false) | Increments every time a visitor views this GitHub repository. |
 | **Live App Visitors & Map Sessions** | ![App Sessions](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2FHelloPrincePal.github.io%2FSnapMap%2Fapp&count_bg=%2300C853&title_bg=%23181A1F&icon=googlemaps.svg&icon_color=%23E7E7E7&title=App+Visitors&edge_flat=false) | Tracks unique client sessions loaded on the hosted GitHub Pages site. |
 | **Interactive Map Exports (Estimation)** | ![Map Exports Counter](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2FHelloPrincePal.github.io%2FSnapMap%2Fexports&count_bg=%2300B0FF&title_bg=%23181A1F&icon=serverless.svg&icon_color=%23E7E7E7&title=Map+Exports&edge_flat=false) | Estimated download tracking (increments based on unique client export requests). |
-
-> [!NOTE]
-> *Note: If your GitHub username differs from `HelloPrincePal`, simply replace it in the badge URLs above to reflect your repository's analytics.*
-
 ---
 
 ## 🚀 Live Demo
