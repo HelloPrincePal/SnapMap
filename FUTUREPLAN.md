@@ -54,6 +54,45 @@ This keeps the three copies always covering the viewport with no visible snap/ju
 - SVG export: only export the center copy, strip the left/right groups
 - `fitSize` padding means `MW` is slightly less than viewport width — must use computed value, not just `width`
 
----
 
-<!-- Add future plans below this line -->
+## 2. Quick Clipboard Copy (SVG & PNG)
+
+**Status:** Planned  
+**Priority:** High  
+**Affects:** `Sidebar.jsx`
+
+### What
+Enable users to copy maps directly to their clipboard as either raw SVG code or raw PNG image data, rather than always requiring file downloads. This allows instant pasting into applications like Figma, Illustrator, Slack, or documents.
+
+### How (implementation plan)
+
+**Copy SVG to Clipboard:**
+- Inside `Sidebar.jsx`, serialize the offscreen SVG element clone to an XML string:
+  ```javascript
+  const serializer = new XMLSerializer();
+  const svgString = serializer.serializeToString(svgClone);
+  ```
+- Write the serialized string to the system clipboard using the modern clipboard API:
+  ```javascript
+  await navigator.clipboard.writeText(svgString);
+  ```
+- Show a brief "Copied SVG!" tooltip or toast notification on success.
+
+**Copy PNG to Clipboard:**
+- Render the map onto an off-screen HTML5 `<canvas>` at a 2x scale factor (to maintain HD rendering).
+- Convert the canvas content into a PNG blob:
+  ```javascript
+  canvas.toBlob(async (blob) => {
+    try {
+      const item = new ClipboardItem({ "image/png": blob });
+      await navigator.clipboard.write([item]);
+      // Show "Copied PNG!" success toast
+    } catch (err) {
+      console.error("Failed to copy image to clipboard: ", err);
+    }
+  }, 'image/png');
+  ```
+
+### Complexity estimate
+~40 lines of changes in `Sidebar.jsx`. Low-medium effort. Uses native web API primitives (`ClipboardItem` and `navigator.clipboard.write`).
+
