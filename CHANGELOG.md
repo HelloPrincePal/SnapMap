@@ -1,8 +1,21 @@
 # Changelog
 
-All notable changes to **MapForge SVG** are documented here.
+All notable changes to **SnapMap** are documented here.
 
 ---
+
+## [1.0.0-release] — 2026-06-24
+
+### Brand Identity, Documentation & Deployments
+
+- **Rebranded to SnapMap**: Unified brand identity across configuration, README, future planning, and changelogs.
+- **Vite Base Configuration**: Added dynamic base path in `vite.config.js` (`process.env.NODE_ENV === 'production' ? '/SnapMap/' : '/'`) to ensure static assets compile correctly for subpath hosting under GitHub Pages.
+- **GitHub Actions Deployment**: Built automated pipeline `.github/workflows/deploy.yml` that checks out repository, configures Node.js, installs dependencies, builds static bundle, and deploys to GitHub Pages on pushes to `main`.
+- **Favicon Redesign**: Replaced the default React favicon in `public/favicon.svg` with a polished, modern map-marker icon from Iconify.
+- **Technical Documentation**:
+  - Created `README.md` containing features list, live link, local startup scripts, and deployment instructions.
+  - Created `ARCHITECTURE.md` explaining state orchestrations, centroid mappings, Visvalingam simplification math, bounding box pruning, Shoelace winding order corrections, and font sizing math.
+- **Future Feature Plans**: Documented upcoming interactive clipboard copy pipeline for raw SVG XML and canvas-derived 2x PNG data in `FUTUREPLAN.md`.
 
 ## [Unreleased] — 2026-06-21 (update 2)
 
